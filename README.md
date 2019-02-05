@@ -18,7 +18,7 @@ This Google Apps script allows for calling the Alma Analytics API and retrieving
 
 4. Select `New` --> `Script` from the `File` menu, and paste in the code from `analytics_call.js`. Repeat for `config.js`. 
 
-5. Now you should be able to run the script either by selecting the `main` function from `analytics_call.js` in the Script Editor console or by setting up a [project trigger][https://developers.google.com/apps-script/(guides/triggers/).
+5. Now you should be able to run the script either by selecting the `main` function from `analytics_call.js` in the Script Editor console or by setting up a [project trigger](https://developers.google.com/apps-script/guides/triggers/).
 
 *Note that the columns names as defined in the `columns` array of each object in `reports` are for convenience only; these will be derived at runtime from the Alma Analytics report itself.
 
