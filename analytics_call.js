@@ -2,7 +2,7 @@
 // For the Analytics API XML
 var rowNameSpace = XmlService.getNamespace('urn:schemas-microsoft-com:xml-analysis:rowset'),
   schemaNameSpace = XmlService.getNamespace('xsd', 'http://www.w3.org/2001/XMLSchema');
-// For throwing alerts to the user
+// For throwing alerts to the user --> Doesn't work on a timed trigger
 var ui = SpreadsheetApp.getUi();
 
 // encodes an Alma Analytics path, replacing the ASCII characters for forward slash and whitespace with the appropriate code
