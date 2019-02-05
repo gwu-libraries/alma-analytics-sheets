@@ -1,6 +1,7 @@
-###Importing Alma Analytics Reports to Google Sheets###
+### Importing Alma Analytics Reports to Google Sheets ###
 
 **Purpose**
+
 This Google Apps script allows for calling the Alma Analytics API and retrieving one or more reports, data from which is then used to populate tabs in a given Google spreadsheet.
 
 **Setup**
