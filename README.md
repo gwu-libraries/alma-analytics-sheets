@@ -6,24 +6,30 @@ This Google Apps script allows for calling the Alma Analytics API and retrieving
 
 **Setup**
 
-1. Clone the repo and/or download `analytics_call.js` and `config.js`.
+1. Clone the repo and/or download `analytics.js`.
 
-2. Modify `config.js` to include your API key from the [Ex Libris Developer Network](https://developers.exlibrisgroup.com/) and the unique ID of the [target spreadsheet](https://developers.google.com/sheets/api/guides/concepts#sheet_id). You will also need to update the `reports` section of `config.js` to reflect the following:
+2. Create or modify an existing Google Sheets document as follows:
+   
+   a. Create a tab called `config`.
+   
+   b. This sheet should have the following column headers:
+     
+     - apiKey
+     
+     - reportPath
+     
+     - spreadsheetTab
 
-   a. the sheet or sheet names to which you want to add data and 
+   c. Include your API key from the [Ex Libris Developer Network](https://developers.exlibrisgroup.com/) in the first row under the `apiKey` column.
 
-   b. the path to each report (as defined within Alma Analytics).*
+   d. For each Alma Analytics report you wish to import, include the path to it in Analytics as a new row under the `reportPath` column. Each path must begin with the top-level folder. For example, a report saved in the IZ-shared folder for George Washington University, in a subfolder called `top_textbooks` would have this path: `/shared/The George Washington University/top_textbooks/top_textbooks_order_data_by_title`. The name of the report is the last part of the path.
 
-3. Open the your Google spreadsheet (the destination for the Alma Analytics reports), open the Script Editor, and create a new project (following the relevant instructions [here](https://developers.google.com/apps-script/guides/sheets)). 
+   e. For each report, include the name of the tab in the current spreadsheet where you want the data to display as a new row under the `spreadsheetTab` column. (If the tab does not exist at import time, the script will create a new tab with that name. Any data in an existing tab will be overwritten.) Your `config` tab should look as follows: 
 
-4. Select `New` --> `Script` from the `File` menu, and paste in the code from `analytics_call.js`. Repeat for `config.js`. 
+   ![screenshot from Google Sheets, showing a spreadsheet with three columns of data.](setup.png)
 
-5. Now you should be able to run the script either by selecting the `main` function from `analytics_call.js` in the Script Editor console or by setting up a [project trigger](https://developers.google.com/apps-script/guides/triggers/).
+3. Now open the Script Editor under the Tools menu in Sheets, and create a new project (following the relevant instructions [here](https://developers.google.com/apps-script/guides/sheets)). 
 
-*Note that the columns names as defined in the `columns` array of each object in `reports` are for convenience only; these will be derived at runtime from the Alma Analytics report itself.
+4. Select `New` --> `Script` from the `File` menu, and paste in the code from `analytics.js`. 
 
-**To Do**
-
-* Add code to create a new menu item in the spreadsheet to call the script.
-
-* Improve error handling: the `ui.alert` call fails on a time-based trigger.
+5. Now you should be able to run the script either by selecting the `main` function in the Script Editor console or by setting up a [project trigger](https://developers.google.com/apps-script/guides/triggers/).
