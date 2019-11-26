@@ -32,4 +32,6 @@ This Google Apps script allows for calling the Alma Analytics API and retrieving
 
 4. Select `New` --> `Script` from the `File` menu, and paste in the code from `analytics.js`. 
 
-5. Now you should be able to run the script either by selecting the `main` function in the Script Editor console or by setting up a [project trigger](https://developers.google.com/apps-script/guides/triggers/).
+5. Modify the line of code `var spreadsheet = SpreadsheetApp.openById('');` to include the ID string of your Google Sheet. (The ID is the long identifier described on [this page](https://developers.google.com/sheets/api/guides/concepts) of the Google Sheets API documentation.) Make sure your spreadsheet ID is between the single quotes in this line of code. Then save the code by clicking the floppy disk icon.
+
+6. Now you should be able to run the script either by selecting the `main` function in the Script Editor console or by setting up a [project trigger](https://developers.google.com/apps-script/guides/triggers/).
